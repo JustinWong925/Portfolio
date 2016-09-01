@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<a href="{{=URL('index')}}">&#60&#60Back</a>
+<h1>Available Listings</h1>
+<ul>
+{{for post in posts:}}
+{{if post.sold==False:}}
+    <b>•</b> <a href="{{=URL(('show'),args=post.id)}}">{{=post.title}}</a> - Posted on {{=post.created_on.strftime("%d/%m/%Y")}} by {{=post.created_by.first_name}} {{=post.created_by.last_name}} (Rating: {{=post.created_by.rating}} (+ {{=post.created_by.positivevotes}} / -  {{=post.created_by.negativevotes}}))
+<h4></h4>
+{{pass}}
+{{pass}}
+</ul>
+<h1></h1>
+<h1></h1>

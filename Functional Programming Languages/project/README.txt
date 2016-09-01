@@ -1,0 +1,2 @@
+This project creates a linked list type data structure in a purely functional programming language (Haskell).
+All the code is wriiten in Haskell, dealing with I/O and pattern matching to move through the linked list.

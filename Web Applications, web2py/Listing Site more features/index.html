@@ -1,0 +1,13 @@
+{{extend 'layout.html'}}
+<h1>Current Listings</h1>
+(<a href="{{=URL('available')}}">See available listings only</a>)
+<h1></h1><h1></h1>
+<ul>
+{{for post in posts:}}
+    <b>•</b> <a href="{{=URL(('show'),args=post.id)}}">{{=post.title}}</a> - Posted on {{=post.created_on.strftime("%d/%m/%Y")}} by {{=post.created_by.first_name}} {{=post.created_by.last_name}} (Rating: {{=post.created_by.rating}} (+ {{=post.created_by.positivevotes}} / -  {{=post.created_by.negativevotes}}))
+<h4></h4>
+{{pass}}
+</ul>
+<h1></h1>
+<h1></h1>
+<h1><a href="{{=URL('create')}}">Post a new listing!</a></h1>

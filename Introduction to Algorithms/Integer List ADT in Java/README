@@ -1,0 +1,19 @@
+Programming Assignment 1
+Justin Wong jujwong
+
+List.java
+   This file is a list module. It is a doubly linked list, with nodes that have a next, curr and prev pointer
+   
+ListClient.java
+   This is a client program that tests the functionality of list.java
+   
+Lex.java
+   This is a program that takes in a text file and sorts it.
+   The insertion sort does not work completely, there is some unfinished code for it in the commment blocks.
+   Most of what is in this file is based upon the FileIO.java example on the class website.
+   
+Makefile
+   Compiles the files together
+   
+README
+   You are reading me

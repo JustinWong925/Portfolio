@@ -1,0 +1,27 @@
+Programming Assignment 2
+Justin Wong jujwong@ucsc.edu
+CS101 Fall 14
+
+List.c
+   This file is a list module. It is a doubly linked list, 
+   with nodes that have a next, curr and prev pointer.
+   
+List.h
+   This is a header file that contains the public functions to be used
+   by Lex.c
+   It allows other files to access the functions of List.c
+   
+ListClient.c
+   This is a client program that tests the functionality of List.c
+   
+Lex.c
+   This is a program that takes in a text file and sorts it through insertionSort.
+   It has its basis from the FileIO.c example on the class website.
+   
+Makefile
+   Compiles the files together
+   There are no memory leaks, but there are compiler warning messages
+   from strdup in Lex.c line 46.
+   
+README
+   You are reading me

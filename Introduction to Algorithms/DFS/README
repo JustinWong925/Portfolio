@@ -1,0 +1,35 @@
+Programming Assignment 5
+Justin Wong jujwong@ucsc.edu
+CS101 Fall 14
+
+List.c
+   This file is a list module. It is a doubly linked list, 
+   with nodes that have a next, curr and prev pointer.
+   
+List.h
+   This is a header file that contains the public functions to be used
+   It allows other files to access the functions of List.c
+   
+GraphTest.c
+   This file starts with the GraphClient.c given to us on the class website and
+   demonstrates more of the functionality of graph.c
+   
+Graph.c
+   A graph data structure implemented with list class. It has a BFS searching
+   algorithm.
+
+Graph.h
+   This is a header file that contains the public functions to be used
+   It allows other files to access the functions of Graph.c
+   
+FindComponents.c
+   The main program where a file is read in, and stores it into a matrix.
+   Using the DFS algorith it prints out the adjacency list representation
+   of the graph then using the transpose of the graph prints out the 
+   strongly connected components
+
+Makefile
+   Compiles the files together
+   
+README
+   You are reading me

@@ -1,0 +1,12 @@
+{{extend 'layout.html'}}
+<b>
+<body bgcolor="yellow">
+<h1>Current Items for Sale!</h1>
+<h2>
+{{for sell in items:}}
+{{=LI(A(sell.title, _href=URL("show", args=sell.id)))}}
+{{pass}}
+</h2>
+
+<font size="6"><li><a href="/hw1/default/display_form.html">Add Item</a></li></font>
+</b>

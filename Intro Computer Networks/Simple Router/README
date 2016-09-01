@@ -1,0 +1,44 @@
+README
+Final Project
+CMPE 150/L
+Justin Wong (jujwong@ucsc.edu) 1264674
+
+To run:
+To run: Have 2 terminal windows open in mininet.
+The first will go to the pox directory and enter "./pox.py misc.router"
+this will begin the controller.
+The second will go to the mininet directory and enter 
+"sudo ./final_topo.py" this will assign the topology for mininet.
+
+final_topo.py
+This file is the topology used in the final project. It was given. 
+There are 5 switches which act as routers in this lab. Each router/switch
+has a number of hosts on it ranging from 1-4. Each host is assigned to
+a specfic ip address, these are the private ip addresses.
+
+router.py
+This file is the pox controller code. The skeleton of this was given.
+In order to assert that the routers were working as planned it was
+neccessary to code their logic in of whether or not to pass packets
+along their network. It was neccessary for hosts on the same
+router to be able to send and receive packets amongst themselves.
+
+This is seen in the code, when a particular switch will look at the 
+src_ip.inNetwork([specific ip address]), for example in switch 1:
+       if src_ip.inNetwork("10.0.0.2") or \
+		  src_ip.inNetwork("192.168.0.20") or \
+		  src_ip.inNetwork("192.168.0.30") or \
+		  src_ip.inNetwork("192.168.0.40"):
+Those 4 ip addresses are the hard-coded versions of the host. If
+the source is one of those then it is able to send the packet to it.
+Otherwise the router will look to see if the destination is in the same
+ip address with mask.
+
+Since all the switches are linked together it is neccessary to allow some
+packets to go through the router and not be able to ping the host.
+This is done by comparing the dst_ip and src_ip for example switch4:
+	 if src_ip.inNetwork("172.16.0.0/12") and \
+		dst_ip.inNetwork("172.16.0.0/12"):
+	    return True
+Which allows the this packet to pass through s4 as s4 does not contain
+any hosts with an ip address in the 172.16.0.0/12 range.

@@ -1,0 +1,51 @@
+{{extend 'layout.html'}}
+<html>
+
+
+<a href="{{=URL('index')}}">&#60&#60Back</a>
+<h1>Listing: {{=post.title}} ({{if post.sold == False:}}still avaliable{{else:}}sold{{pass}})</h1>
+Posted by: {{=post.created_by.first_name}} {{=post.created_by.last_name}} on {{=post.created_on.strftime("%d/%m/%Y")}} in category: {{=post.category}}
+<h1></h1>
+Price: ${{=post.price}}
+<br>
+{{if post.image_file:}}
+<a href = "{{=URL('viewimage', args=[post.image_file,postID])}}">
+<img height="100px" src="{{=URL('download', args=post.image_file)}}" />
+</a>
+{{pass}}
+
+{{for img in imgs:}}
+<a href="{{=URL('viewimage', args=[img.image,postID])}}">
+<img height="100px" src="{{=URL('download', args=img.image)}}" />
+</a>
+{{pass}}
+<br>
+{{if post.created_by == auth.user_id:}}
+<a href="{{=URL('upload_new_image',args=post.id)}}">Upload another image here.</a>
+{{pass}}
+<h1></h1>
+Item description: {{=post.description}}
+<h1></h1>
+Contact at {{=post.phone_number}} or {{=post.created_by.email}}
+</h3>
+
+<br><br>
+    
+{{if auth.user:}}
+<td><div id="{{=post.created_by}}"><button data-id="{{=post.created_by}}" class="vote down" id="thumbs_down" onclick="do_ajax_vote(this,'down')">Vote Down</button>&nbsp;&nbsp;&nbsp;&nbsp;<button data-id="{{=post.created_by}}"class="vote up"  id="thumbs_up" onclick="do_ajax_vote(this,'up')">Vote Up </button>&nbsp;&nbsp;&nbsp;&nbsp;<span class='votes'>{{=db(db.auth_user.id==post.created_by).select()[0].rating}}</span></div></td>
+{{else:}}
+This user has a rating of {{=post.created_by.rating}} out of {{=post.created_by.numberofvotes}} votes (+ {{=post.created_by.positivevotes}} / - {{=post.created_by.negativevotes}}). Log in to rate them!
+{{pass}}
+</html>
+
+<script>
+
+    function do_ajax_vote(t, updown){
+        var id =jQuery(t).attr('data-id');
+        jQuery.ajax({method:'post', url:'{{=URL('../rating')}}',
+                     data:{'updown':updown, 'id':id},
+                    success: function(data){
+            $(t).closest('div').find('.votes').html(data);
+        } });
+    }
+</script>

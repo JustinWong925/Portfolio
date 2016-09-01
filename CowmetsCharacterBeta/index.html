@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+
+
+
+
+<head>
+   <title>Test Environment</title>
+   <meta charset="utf-8">
+   <script src="brine.js"></script>
+   <script src="Player.js"></script>
+   <script src="testFile.js"></script>
+   <script src="GameStorage.js"></script>
+   <script src="CurrencyManager.js"></script>
+   <script src="PowerUpManager.js"></script>
+   <script src="AmmoManager.js"></script>
+   <script src="AlienManager.js"></script>
+   <script src="rockManager.js"></script>
+</head>
+
+
+
+
+
+
+
+<body onload="initGame('canvas');">
+   
+   
+<canvas id="canvas" width="900" height="900" >
+  You'll see this if there's a problem.
+</canvas>
+   
+   
+   
+   <script>
+        use2D = true;
+        initGame("canvas");
+        
+		//cheap background for the moment
+		
+		var background = new Sprite();
+		background.x = 0;
+		background.y = 0;
+   		background.width = canvas.width;
+    	background.height = canvas.height;
+ 		background.image = Textures.load("http://www.colorhexa.com/000000.png");
+		world.addChild(background);
+
+
+
+
+		var tempS = new GameStorage();
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+      	var x = new Level(tempS);
+      	x.initialize();
+
+        
+
+
+
+
+
+	</script>
+</body>

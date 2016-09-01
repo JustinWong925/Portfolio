@@ -1,0 +1,18 @@
+{{extend 'layout.html'}}
+<h1>Item for Sale: <strong>{{=item.title}}</strong> </h1>
+<p><font size = "4">Date Posted: {{=item.date_posted.strftime("%m/%d/%Y")}}</font></p>
+<p><font size = "4">Description: {{=item.description}}</font></p>
+<p><font size = "3">Category: {{=item.category}}</font></p>
+<div style="text-align:center">
+<img width="400px"
+     src="{{=URL('download', args=item.file)}}" />
+    <p><font size = "6"><strong> Price: {{=item.price}}</font></strong></p>
+</div>
+
+<p>Contact me at: {{=item.email}}</p>
+<p>or at: {{=item.phone_number}}</p>
+<p>
+</p>
+<p><font size = "3">do <strong>NOT</strong> contact me with unsolicited services or offers</font></p>
+
+<font size="6"><li><a href="/hw1/default/index">Still Searching?</a></li></font>
