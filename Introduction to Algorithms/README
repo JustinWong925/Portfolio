@@ -1,0 +1,7 @@
+CMPS 101: Introduction to Algorithms
+
+This class is one of the first upper-division course that computer science majors take at UCSC.
+It involves a combination of learning how to correctly set up proofs and programming.
+In this particular course I dealt with programming in both C and Java. Using an abstract data type
+and then modifying that. I also learned about Matrix operations, graphs and the different searching 
+algorithms used in graphs such as depth-first  search and breadth-first search and shortest path.

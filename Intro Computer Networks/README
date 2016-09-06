@@ -1,0 +1,11 @@
+CMPE 150/L: Introduction to Computer Networks
+
+This course is about computer networks. There was a lab associated with the course where
+I had experienced working with physical Cisco routers and switches. In order to practice with this
+it was necessary to learn some shell scripting, coding in Python, and of course how computer networks
+are set up in the first place. The lab covered: 
+1. Setting up a virtual machine, how to analyze packet sniffer results,
+2. Show HTTP and DNS are used, 
+3. The mechanisms of TCP including packet loss and congestion avoidance, 
+4. Creating a firewall to allow certain types of traffic through the network, and 
+5. Programming a simple router to connect different devices and allow traffic through them.

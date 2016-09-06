@@ -1,0 +1,8 @@
+CMPS 112: Functional Programming Langauges
+
+This course focuses on the different types of programming languages that are not object-oriented. 
+In particular we focused on using Haskell, a language that is very useful in using pattern-matching.
+Using the book, "Learn You A Haskell" we covered from the basics of syntax to the more powerful monads.
+In addition we had a brief section on the Prolog language and some Javascript.
+
+There was also a final project that was completed in Haskell. There are more details in the project directory.

@@ -9,7 +9,7 @@ To install using web2py: go in the web2py directory and install the package.
 
 We had created this project using SCRUM and agile methodology as such we have created: Release Plan, Sprint Plans and Reports, Testing and Buglist.
 
-It is shown on a 2D game-board with different dots along the matrix labelled with different names for each of the players. There is a log-in required.
+It is shown on a 2D game-board with different dots along the matrix labelled with different names for each of the players. There is a log-in/registration required.
 There are two types of users in this:
 1. Dungeon Master: Has access to mulitple characters and is able to control the size of the board.
 2. Regular Player: Only has access to one character.
